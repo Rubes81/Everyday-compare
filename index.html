@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Compare useful products by features, price, and value. Find the right fit for your home, tech, tools, and everyday life.">
+<title>Everyday Compare | Find the right fit</title>
+<style>
+:root{--ink:#182230;--muted:#667085;--line:#e6eaf0;--paper:#f7f8fa;--brand:#2457d6;--brand2:#173fa8;--green:#087443;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink);background:var(--paper);line-height:1.5}
+a{color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:850;font-size:1.2rem;letter-spacing:-.04em;text-decoration:none}.logo span{color:var(--brand)}
+.navlinks{display:flex;gap:22px;align-items:center}.navlinks a{text-decoration:none;color:#475467;font-size:.93rem}
+.pill{background:#edf2ff;color:var(--brand);border-radius:999px;padding:8px 13px;font-weight:700;font-size:.85rem;text-decoration:none}
+.hero{background:linear-gradient(120deg,#101f46,#1e4ab8);color:white;padding:68px 0 56px}
+.hero-inner{max-width:760px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;font-weight:800;color:#c8d6ff}
+h1{font-size:clamp(2.3rem,6vw,4.3rem);line-height:1.03;letter-spacing:-.055em;margin:14px 0 18px}
+.hero p{font-size:1.1rem;color:#e0e8ff;max-width:650px;margin:0 0 25px}
+.search{display:flex;gap:10px;background:white;padding:7px;border-radius:14px;max-width:650px}
+.search input{border:0;outline:0;flex:1;min-width:0;padding:12px;font-size:1rem;color:var(--ink)}
+button,.btn{border:0;border-radius:10px;background:var(--brand);color:white;padding:12px 17px;font-weight:750;font-size:.93rem;cursor:pointer;text-decoration:none;display:inline-flex;justify-content:center;align-items:center}
+button:hover,.btn:hover{background:var(--brand2)}
+.hero .search button{background:#2457d6}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;color:#d5e0ff;font-size:.82rem}
+main{padding:36px 0 64px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 18px}
+h2{font-size:1.65rem;letter-spacing:-.035em;margin:0}.sub{color:var(--muted);margin:5px 0 0}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:38px}
+.cat{background:white;border:1px solid var(--line);border-radius:14px;padding:17px 12px;text-align:center;cursor:pointer;transition:.15s}
+.cat:hover,.cat.active{border-color:#9bb5ff;box-shadow:0 4px 16px #1c3c8210;background:#f5f8ff}
+.cat .emoji{font-size:1.7rem;display:block;margin-bottom:7px}.cat b{font-size:.88rem}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0}
+select{border:1px solid var(--line);background:white;border-radius:10px;padding:11px 13px;color:var(--ink);font:inherit}
+.count{color:var(--muted);font-size:.9rem;margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.product-art{height:155px;display:grid;place-items:center;background:linear-gradient(135deg,#edf2ff,#f7f8fb);font-size:4rem}
+.card-body{padding:17px;display:flex;flex-direction:column;flex:1}
+.tag{font-size:.73rem;color:var(--brand);font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.card h3{font-size:1.08rem;margin:7px 0}.desc{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+.specs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.spec{background:#f2f4f7;color:#475467;border-radius:7px;padding:5px 8px;font-size:.76rem}
+.price-row{display:flex;align-items:baseline;gap:7px;margin-top:auto;margin-bottom:13px}.price{font-size:1.45rem;font-weight:850;letter-spacing:-.04em}.price-note{font-size:.75rem;color:var(--muted)}
+.card .btn{width:100%}.card .btn.secondary{background:#edf2ff;color:var(--brand)}.card .btn.secondary:hover{background:#dfe8ff}
+.note{background:#fff8e8;border:1px solid #f3dfad;color:#694d12;border-radius:12px;padding:13px 15px;font-size:.84rem;margin-top:24px}
+.empty{background:white;border:1px dashed #cbd5e1;border-radius:14px;padding:32px;text-align:center;color:var(--muted);grid-column:1/-1}
+.compare{margin-top:44px;background:white;border:1px solid var(--line);border-radius:16px;padding:22px;overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:600px;text-align:left}th,td{padding:13px;border-bottom:1px solid var(--line)}th{font-size:.85rem;color:#475467}td{font-size:.9rem}
+footer{background:#101828;color:#d0d5dd;padding:36px 0}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot strong{color:white}.foot p{max-width:620px;font-size:.84rem;color:#98a2b3}
+footer a{color:#d0d5dd}
+.disclosure{font-size:.78rem;color:#98a2b3;max-width:700px}
+@media(max-width:850px){.categories{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nav{height:62px}.navlinks a:not(.pill){display:none}.hero{padding:48px 0 42px}.search{flex-direction:column}.search button{width:100%}.categories{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.count{margin-left:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#" aria-label="Everyday Compare home">everyday<span>compare</span></a>
+  <nav class="navlinks"><a href="#categories">Categories</a><a href="#comparisons">Comparisons</a><a href="#about">How it works</a><a class="pill" href="#comparisons">Explore picks</a></nav>
+</div></header>
+<section class="hero"><div class="wrap hero-inner">
+  <div class="eyebrow">Smarter choices start here</div>
+  <h1>Compare better.<br>Choose with confidence.</h1>
+  <p>Clear, practical product comparisons for the things you use every day — without the guesswork.</p>
+  <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search products, features, or categories…" aria-label="Search comparisons"><button type="submit">Search comparisons</button></form>
+  <div class="trust"><span>✓ Straightforward comparisons</span><span>✓ Useful buying criteria</span><span>✓ No-cost browsing</span></div>
+</div></section>
+<main class="wrap">
+  <section id="categories">
+    <div class="section-head"><div><h2>Browse categories</h2><p class="sub">Start with what you're shopping for.</p></div></div>
+    <div class="categories" id="categoryList"></div>
+  </section>
+  <section id="comparisons">
+    <div class="section-head"><div><h2>Popular comparisons</h2><p class="sub">A sample of the kinds of guides this site will feature.</p></div></div>
+    <div class="controls">
+      <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="name">Name: A to Z</option></select>
+      <select id="categorySelect" aria-label="Filter category"><option value="all">All categories</option></select>
+      <span class="count" id="resultCount"></span>
+    </div>
+    <div class="cards" id="productGrid"></div>
+    <div class="note"><strong>Demo content:</strong> Product names, prices, and ratings below are illustrative placeholders, not live offers or verified product recommendations. Replace them with researched products and approved affiliate links before publishing.</div>
+  </section>
+  <section class="compare" aria-labelledby="compareTitle">
+    <h2 id="compareTitle">What makes a useful comparison?</h2>
+    <p class="sub">We compare the details that matter — not just the headline price.</p>
+    <table><thead><tr><th>What to compare</th><th>Why it matters</th><th>What to show</th></tr></thead>
+    <tbody>
+      <tr><td>Total cost</td><td>Lowest sticker price isn't always best value.</td><td>Price, shipping, recurring fees</td></tr>
+      <tr><td>Core features</td><td>Helps shoppers see meaningful differences.</td><td>Specs, capacity, compatibility</td></tr>
+      <tr><td>Warranty & support</td><td>Important when a product needs repair.</td><td>Coverage length and exclusions</td></tr>
+      <tr><td>Best use case</td><td>The right choice depends on the buyer.</td><td>Best for budget, everyday use, premium</td></tr>
+    </tbody></table>
+  </section>
+  <section id="about" style="padding:42px 0 0">
+    <h2>How Everyday Compare works</h2>
+    <p class="sub">We aim to make shopping research easier with clear criteria, helpful explanations, and transparent links. Some links may eventually be affiliate links, which means we may earn a commission if you buy through them, at no extra cost to you. Affiliate relationships will never guarantee a positive review.</p>
+  </section>
+</main>
+<footer><div class="wrap foot">
+  <div><strong>everydaycompare</strong><p>Independent-minded comparisons for everyday decisions.</p></div>
+  <div><strong>Important information</strong><p class="disclosure">This is a starter demo. Before launch, add a real About page, Contact page, Privacy Policy, Terms, affiliate disclosure, verified product research, and working affiliate links. Clearly label sponsored placements and keep prices/date-stamped where possible.</p></div>
+</div></footer>
+<script>
+const categories=[
+  {id:"all",name:"All",icon:"✨"},{id:"tools",name:"Tools",icon:"🛠️"},
+  {id:"kitchen",name:"Home & Kitchen",icon:"🍳"},{id:"tech",name:"Electronics",icon:"🎧"},
+  {id:"household",name:"Household",icon:"🏠"},{id:"outdoor",name:"Outdoor",icon:"🏕️"}
+];
+const products=[
+ {id:1,name:"Cordless Drill Starter Kit",cat:"tools",label:"Tools",icon:"🛠️",price:99,desc:"A practical comparison page for everyday DIY and home projects.",specs:["18V platform","Battery included","DIY use"],feature:"Best for home projects"},
+ {id:2,name:"Compact Air Fryer",cat:"kitchen",label:"Home & Kitchen",icon:"🍟",price:79,desc:"Compare capacity, controls, cleanup, and counter space before choosing.",specs:["4–5 qt class","Easy-clean basket","Compact"],feature:"Best for smaller kitchens"},
+ {id:3,name:"Wireless Noise-Canceling Headphones",cat:"tech",label:"Electronics",icon:"🎧",price:149,desc:"A sample guide focused on comfort, battery life, and noise cancellation.",specs:["Wireless","Long battery","Travel-friendly"],feature:"Best for commuting"},
+ {id:4,name:"Robot Vacuum",cat:"household",label:"Household",icon:"🤖",price:229,desc:"Compare mapping, floor types, obstacle handling, and replacement costs.",specs:["Room mapping","Hard floors","Scheduled cleaning"],feature:"Best for routine cleaning"},
+ {id:5,name:"Portable Power Station",cat:"outdoor",label:"Outdoor",icon:"🔋",price:299,desc:"A buying guide concept comparing capacity, ports, weight, and recharge time.",specs:["Portable","Multiple ports","Backup power"],feature:"Best for weekend trips"},
+ {id:6,name:"Programmable Coffee Maker",cat:"kitchen",label:"Home & Kitchen",icon:"☕",price:59,desc:"Compare brew size, programmability, carafe design, and cleaning.",specs:["Programmable","Drip coffee","Easy controls"],feature:"Best for everyday coffee"}
+];
+let activeCat="all";
+const categoryList=document.getElementById("categoryList");
+const categorySelect=document.getElementById("categorySelect");
+const productGrid=document.getElementById("productGrid");
+const resultCount=document.getElementById("resultCount");
+categories.forEach(c=>{
+ const b=document.createElement("button");b.className="cat"+(c.id==="all"?" active":"");b.type="button";
+ b.innerHTML=`<span class="emoji">${c.icon}</span><b>${c.name}</b>`;
+ b.addEventListener("click",()=>setCategory(c.id));categoryList.appendChild(b);
+ if(c.id!=="all"){const o=document.createElement("option");o.value=c.id;o.textContent=c.name;categorySelect.appendChild(o)}
+});
+function setCategory(id){activeCat=id;categorySelect.value=id;document.querySelectorAll(".cat").forEach((b,i)=>b.classList.toggle("active",categories[i].id===id));render()}
+function render(){
+ const q=document.getElementById("searchInput").value.trim().toLowerCase();
+ let items=products.filter(p=>(activeCat==="all"||p.cat===activeCat)&&(!q||[p.name,p.desc,p.label,p.feature,...p.specs].join(" ").toLowerCase().includes(q)));
+ const sort=document.getElementById("sortSelect").value;
+ if(sort==="low")items.sort((a,b)=>a.price-b.price);if(sort==="high")items.sort((a,b)=>b.price-a.price);if(sort==="name")items.sort((a,b)=>a.name.localeCompare(b.name));
+ resultCount.textContent=`${items.length} sample ${items.length===1?"comparison":"comparisons"}`;
+ productGrid.innerHTML="";
+ if(!items.length){productGrid.innerHTML='<div class="empty">No sample comparisons match that search. Try another term or category.</div>';return}
+ items.forEach(p=>{
+  const el=document.createElement("article");el.className="card";
+  el.innerHTML=`<div class="product-art" aria-hidden="true">${p.icon}</div><div class="card-body"><div class="tag">${p.label}</div><h3>${p.name}</h3><p class="desc">${p.desc}</p><div class="specs">${p.specs.map(s=>`<span class="spec">${s}</span>`).join("")}</div><p class="desc"><strong>${p.feature}</strong></p><div class="price-row"><span class="price">From $${p.price}</span><span class="price-note">demo price</span></div><a class="btn secondary" href="#about" aria-label="Learn about ${p.name}">View comparison guide</a></div>`;
+  productGrid.appendChild(el);
+ });
+}
+document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();render();document.getElementById("comparisons").scrollIntoView({behavior:"smooth"})});
+document.getElementById("searchInput").addEventListener("input",render);
+document.getElementById("sortSelect").addEventListener("change",render);
+categorySelect.addEventListener("change",e=>setCategory(e.target.value));
+render();
+</script>
+</body></html>
