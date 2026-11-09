@@ -1,23 +1,20 @@
-# Everyday Compare — starter website
+# Everyday Compare — Home & Kitchen upgrade
 
-This is a responsive, single-page comparison-site prototype.
-
-## Preview locally
-Open `index.html` in a browser.
+## Upload
+Upload the contents of this folder to the root of the `everyday-compare` GitHub repository, preserving the `assets/` and `articles/` folders. GitHub Pages should continue to publish from `main` / root.
 
 ## Before publishing
-1. Choose and verify a business name and domain. "Everyday Compare" is a working name only.
-2. Replace the illustrative products, demo prices, and generic descriptions with researched products and current, verified details.
-3. Join suitable affiliate programs and replace each guide's call-to-action with your approved tracking link. Do not imply a partnership before approval.
-4. Add real comparison guide pages with original testing/research, clear methodology, update dates, and sources.
-5. Add an affiliate disclosure near affiliate links, plus Privacy Policy, Terms, About, and Contact pages.
-6. Do not publish fake ratings, fake reviews, or unverified savings claims.
-7. Deploy the static site using a free host such as GitHub Pages or Cloudflare Pages; connect a custom domain when ready.
+- Confirm the public contact email is correct: Rjarajr81@gmail.com.
+- Review all pages and adapt the starter privacy and terms language to any tools/services you actually use.
+- This site currently has no affiliate links, product prices, ratings, tracking, analytics, contact form, or product feed.
+- Do not claim Amazon Associate status before acceptance. After acceptance, add Amazon's required site statement and clear disclosures near each affiliate link, following current program rules.
+- Do not paste unverified product pricing or ratings. Update guides with original, useful research over time.
 
-## Monetization plan
-Start with one or two focused categories (for example tools and home/kitchen) and publish useful, original buyer guides. Apply to relevant affiliate programs after the site has genuine content. Add display ads only after building meaningful traffic. Revenue is not guaranteed.
+## Site files
+- `index.html`: homepage
+- `articles/`: ten original home and kitchen buying guides
+- `about.html`, `contact.html`, `privacy.html`, `terms.html`, `affiliate-disclosure.html`
+- `assets/styles.css`: responsive styling
+- `robots.txt`, `sitemap.xml`: basic discovery files
 
-## Current limitations
-- No live product feed, live price checking, user accounts, or checkout.
-- Sample product data is illustrative only.
-- No affiliate tracking links are configured.
+This is a static starter site, not legal advice and not a guarantee of affiliate-program acceptance or income.
